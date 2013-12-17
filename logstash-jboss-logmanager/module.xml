@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module xmlns="urn:jboss:module:1.0" name="net.logstash.loggers.logstash-jboss-logmanager">
+	<resources>
+		<resource-root path="logstash-jboss-logmanager-1.0.0.jar" />
+		<resource-root path="logstash-1.0.0.jar" />
+	</resources>
+	<dependencies>
+		<module name="org.jboss.logmanager" />
+		<module name="org.codehaus.jackson.jackson-core-asl" />
+	</dependencies>
+</module>
