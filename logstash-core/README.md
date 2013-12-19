@@ -36,17 +36,3 @@ or
 `ALL_FIELDS` (to specify all MDC available fields)
   * Spaces are ignored.
 
-Changelog
----------
-
-- 2013/12/17 - First version uploaded
-
-License
--------
-
-Apache 2.0
-
-Contact
--------
-
-Contact Marcel Puchol <mpucholblasco@gmail.com> / @mpucholblasco with questions
