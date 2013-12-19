@@ -8,13 +8,6 @@ Logic Flow
 
 To do.
 
- 1. To do
- 1. To do
-  1. To do
-  1. To do
- 1. To do
- 1. To do
-
 Parametrizing
 -------------
 

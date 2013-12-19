@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>logstash-parent</name>
+=======
+<<<<<<< HEAD
+	<name>logstash-parent</name>
+=======
+	<name>logstash-loggers-parent</name>
+>>>>>>> refs/heads/master
+>>>>>>> refs/remotes/origin/master
 	<comment></comment>
 	<projects>
 	</projects>
