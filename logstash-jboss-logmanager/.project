@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>logstash-loggers-jboss-logmanager</name>
+	<name>logstash-jboss-logmanager</name>
 	<comment></comment>
 	<projects>
 	</projects>
