@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module xmlns="urn:jboss:module:1.0" name="net.logstash.loggers.logstash-jboss-logmanager">
+<module xmlns="urn:jboss:module:1.0" name="net.logstash.loggers.logstash_jboss_logmanager">
 	<resources>
 		<resource-root path="logstash-jboss-logmanager-1.0.0.jar" />
-		<resource-root path="logstash-1.0.0.jar" />
+		<resource-root path="logstash-core-1.0.0.jar" />
 	</resources>
 	<dependencies>
 		<module name="org.jboss.logmanager" />

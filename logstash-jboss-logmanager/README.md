@@ -37,7 +37,7 @@ The following handlers are present on this module:
 
 There are some common parameters present on all handlers:
  * File handler parameters
-  * `file` (string) : the file description consisting of the path and optional relative to path.
+  * `fileName` (string) : the file description consisting of the path and optional relative to path.
   * `append` (boolean) : specifies whether to append to the target file.
   * `autoflush` (boolean): automatically flush after each write.
  * Logstash parameters
@@ -60,16 +60,22 @@ For instance, if you would to use a `LogstashSizeRotatingFileHandler`, follow th
  1. Edit your standalone configuration file (`${jboss_folder}/standalone/configuration/standalone.xml` by default) or your domain configuration (according to the one you use).
  1. Look for `<subsystem xmlns="urn:jboss:domain:logging:` tag.
  1. Add a `custom-handler` like this:
+
 ```
-<custom-handler name="HANDLER_NAME" class="net.logstash.loggers.logstash_jboss_logmanager.LogstashSizeRotatingFileHandler" module="net.logstash.loggers.logstash_jboss_logmanager">
-  <properties>
-    <property name="fileName" value="${jboss.server.log.dir}/server.log"/>
-    <property name="timeZone" value="UTC"/>
-    <property name="autoFlush" value="true"/>
-    <property name="maxBackupIndex" value="10"/>
-    <property name="rotateSize" value="209715200"/>
-  </properties>
-</custom-handler>
+    <custom-handler name="HANDLER_NAME" class="net.logstash.loggers.logstash_jboss_logmanager.LogstashSizeRotatingFileHandler" module="net.logstash.loggers.logstash_jboss_logmanager">
+      <properties>
+        <property name="fileName" value="${jboss.server.log.dir}/server.log"/>
+        <property name="timeZone" value="UTC"/>
+        <property name="autoFlush" value="true"/>
+        <property name="maxBackupIndex" value="10"/>
+        <property name="rotateSize" value="209715200"/>
+      </properties>
+    </custom-handler>
 ```
 
 On previous example, `server.log` file will show Logstash formatted logs, having UTC time zone, will rotate it by 200MB, and will keep 10 backup files.
+
+Known issues
+------------
+
+* No property "maxBackupIndex" setter found for handler "HANDLER_NAME" : there is a known problem regarding `logging.properties` (see [here](https://community.jboss.org/thread/221367) for further information) when a handler is modified. The easiest way to fix the problem is deleting `logging.properties` file (do not worry, it is regenerated when JBoss start).
