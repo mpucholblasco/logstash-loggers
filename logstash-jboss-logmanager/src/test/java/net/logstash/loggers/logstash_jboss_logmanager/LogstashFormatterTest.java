@@ -22,7 +22,8 @@ public class LogstashFormatterTest {
 		LogstashFactory factory = new LogstashFactory();
 		LogstashFormatter formatter = new LogstashFormatter(factory);
 		ExtLogRecord logRecord = new ExtLogRecord(Level.INFO, "My message",
-				"net.logstash.loggers.logstash_jboss_logmanager.test");
+				"net.logstash.loggers.logstash_jboss_logmanager.logger");
+		logRecord.setSourceClassName("net.logstash.loggers.logstash_jboss_logmanager.test");
 		logRecord.setMillis(1005270400123L);
 		String currentResult = formatter.format(logRecord);
 		String expectedResult = "{\"host\":\""
@@ -38,7 +39,8 @@ public class LogstashFormatterTest {
 				LogstashField.HOST.getDefaultName(), "myHost");
 		LogstashFormatter formatter = new LogstashFormatter(factory);
 		ExtLogRecord logRecord = new ExtLogRecord(Level.INFO, "My message",
-				"net.logstash.loggers.logstash_jboss_logmanager.test");
+				"net.logstash.loggers.logstash_jboss_logmanager.logger");
+		logRecord.setSourceClassName("net.logstash.loggers.logstash_jboss_logmanager.test");
 		logRecord.setMillis(1005270400123L);
 		String currentResult = formatter.format(logRecord);
 		String expectedResult = "{\"host\":\"myHost\",\"level\": \"INFO\",\"@timestamp\":\"2001-11-09T01:46:40.123Z\",\"message\":\"My message\",\"thread\": \"main\",\"classname\": \"net.logstash.loggers.logstash_jboss_logmanager.test\"}";
@@ -248,7 +250,8 @@ public class LogstashFormatterTest {
 
 	private final ExtLogRecord createBasicLogRecord() {
 		ExtLogRecord logRecord = new ExtLogRecord(Level.INFO, "My message",
-				"net.logstash.loggers.logstash_jboss_logmanager.test");
+				"net.logstash.loggers.logstash_jboss_logmanager.logger");
+		logRecord.setSourceClassName("net.logstash.loggers.logstash_jboss_logmanager.test");
 		logRecord.setMillis(1005270400123L);
 		return logRecord;
 	}

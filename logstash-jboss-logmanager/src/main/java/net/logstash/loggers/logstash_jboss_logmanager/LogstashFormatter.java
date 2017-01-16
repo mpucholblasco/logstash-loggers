@@ -29,7 +29,7 @@ public class LogstashFormatter extends ExtFormatter {
 		logstashGenerator.setMessage(extLogRecord.getFormattedMessage());
 		logstashGenerator.setThrowable(extLogRecord.getThrown());
 		logstashGenerator.setTimestamp(extLogRecord.getMillis());
-		logstashGenerator.setClassName(extLogRecord.getLoggerClassName());
+		logstashGenerator.setClassName(extLogRecord.getSourceClassName());
 		logstashGenerator.setThread(extLogRecord.getThreadName());
 		logstashGenerator.setNdc(extLogRecord.getNdc());
 		logstashGenerator.setMdc(extLogRecord.getMdcCopy());
